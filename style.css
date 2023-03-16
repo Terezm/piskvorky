@@ -1,3 +1,78 @@
+ 
+ * {
+  box-sizing: border-box;
+}
+
+ body {
+  background: linear-gradient(#615dad, #ffc8da);
+  background-attachment: fixed;
+}
+
+.nadpis {
+  font-family: "Lobster";
+  color: white;
+  text-align: center;    
+}
+
+img {
+    width: 350px;
+    height: 250px;
+}
+
+.kontejner {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  top: 1rem;
+  left: 50rem;
+  overflow:auto;
+  justify-content: center;
+}
+
+.uvod {
+  background-color: #283e50;
+  padding: 10px 20px 30px 20px; 
+  
+}
+
 h1 {
-    font-family: "Lobster";
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+}
+
+.rulesbutton,
+.startbutton {
+  color: #ffffff;
+  font-size: 20px;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+}
+
+.startbutton {
+  background-color: #0197f6;
+}
+
+.startbutton:hover {
+  background-color: #0090e9;
+}
+
+.rulesbutton {
+  background-color: #1fcca4;
+  border-bottom: 0.5px solid #283e50;
+} 
+
+.rulesbutton:hover {
+  background-color: #1cbb96
 }
