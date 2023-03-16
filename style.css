@@ -38,8 +38,9 @@ img {
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster',;
   font-size: 50px;
+  font-weight:lighter;
 }
 
 p {
