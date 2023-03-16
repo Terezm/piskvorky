@@ -29,7 +29,6 @@ img {
   top: 1rem;
   left: 50rem;
   overflow:auto;
-  justify-content: center;
 }
 
 .uvod {
@@ -40,7 +39,7 @@ img {
 
 h1 {
   font-family: 'Lobster', cursive;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 p {
