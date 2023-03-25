@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    background: linear-gradient(#615dad, #ffc8da);
+    background-attachment: fixed;
+}
+
+.nadpis {
+    font-family: "Lobster";
+    font-size: 70px;
+    color: white;
+    text-align: center;    
+    
+  }
