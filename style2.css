@@ -1,18 +1,60 @@
 * {
-    box-sizing: border-box;
+box-sizing: border-box;
   }
 
 body {
-    background: linear-gradient(#615dad, #ffc8da);
-    background-attachment: fixed;
+background: linear-gradient(#615dad, #ffc8da);
+background-attachment: fixed;  
 }
 
 .nadpis {
     font-family: "Lobster";
-    font-size: 70px;
+    font-size: 60px;
     color: white;
     text-align: center;    
-    
+    }
+
+
+  /*uvod*/
+
+.playing {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+  
+ 
+ .opening {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 35%;
+  margin-right: 35%;
+ }
+
+
+ .field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   }
 
+ .plate {
+  display: flex;
+  justify-content: center;
   
+ }
+
+ .plate button {
+  border: 2px solid black;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  }
+
+  .plate button:hover {
+    background-color: white;
+  }
+  
+ 
+    
+  }
