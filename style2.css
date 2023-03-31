@@ -5,6 +5,7 @@ box-sizing: border-box;
 body {
 background: linear-gradient(#615dad, #ffc8da);
 background-attachment: fixed;  
+
 }
 
 .nadpis {
@@ -55,6 +56,32 @@ background-attachment: fixed;
     background-color: white;
   }
   
- 
-    
+  .circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 2px solid white;
   }
+
+.homebutton {
+  background-color: #1fcca4;
+}
+
+.homebutton:hover {
+  background-color: #1cbb96;
+}
+
+.restartbutton {
+  background-color: #0197f6;
+}
+
+.restartbutton:hover {
+  background-color: #0090e9;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 3rem;
+  padding: 3rem;
+  border-radius: 20%;
+}
