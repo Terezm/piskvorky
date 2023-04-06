@@ -1,5 +1,6 @@
 * {
 box-sizing: border-box;
+
   }
 
 body {
@@ -22,6 +23,10 @@ background-attachment: fixed;
   color: white;
   font-weight: bold;
   font-size: 25px;
+  display: flex;
+  padding: 2rem;
+  margin-right: 25%;
+  
 }
   
  
@@ -56,14 +61,18 @@ background-attachment: fixed;
     background-color: white;
   }
   
-  .circle {
+  /*.circle {
     height: 30px;
     width: 30px;
     border-radius: 100%;
-    border: 2px solid white;
-  }
+    border: 3px solid white;
+  }*/
+
+  
 
 .homebutton {
+  width: 2rem;
+  height: 2rem;
   background-color: #1fcca4;
 }
 
@@ -72,6 +81,8 @@ background-attachment: fixed;
 }
 
 .restartbutton {
+  width: 2rem;
+  height: 2rem;
   background-color: #0197f6;
 }
 
@@ -84,4 +95,5 @@ background-attachment: fixed;
   margin-left: 3rem;
   padding: 3rem;
   border-radius: 20%;
+  
 }

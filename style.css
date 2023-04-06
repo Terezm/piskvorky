@@ -9,7 +9,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
+
 
 .nadpis {
   font-family: "Lobster";
