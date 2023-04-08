@@ -24,15 +24,17 @@ background-attachment: fixed;
   font-weight: bold;
   font-size: 25px;
   display: flex;
-  padding: 2rem;
-  margin-right: 25%;
+  margin: 0.5rem;
+ padding-left: 5rem;
+  
+
   
 }
   
  
  .opening {
   display: flex;
-  justify-content: space-between;
+  justify-content:right;
   margin-left: 35%;
   margin-right: 35%;
  }
@@ -95,7 +97,7 @@ background-attachment: fixed;
   margin-left: 3rem;
   padding: 3rem;
   border-radius: 20%;
-  background-image: image(.circle);
+
 }
 
 .board__field--cross {
@@ -109,3 +111,10 @@ background-attachment: fixed;
   background-position: 50%;
   background-repeat: no-repeat;
 }
+ /* 
+.playing {
+  display: flex;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  justify-content: flex-end;
+}*/

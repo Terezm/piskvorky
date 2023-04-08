@@ -12,25 +12,34 @@ const btn8 = document.querySelector('button:nth-child(8)');
 const btn9 = document.querySelector('button:nth-child(9)');
 const btn10 = document.querySelector('button:nth-child(10)');
 
+
+const changingPlayer = document.querySelector('img')
+
+if (currentPlayer === 'circle') {
+changingPlayer.src = 'circle.svg'
+} 
+
+
+
 const playing = (event) => {
-  const playingnow = event.target.classList
-   
+  const turn = event.target.classList
+    
    if (currentPlayer === 'circle') {
-    playingnow.value = 'board__field--circle';
+    turn.value = 'board__field--circle';
     currentPlayer = 'cross';
-    event.target.disabled = true
-  }else {
+   event.target.disabled = true
+   changingPlayer.src = 'cross.svg';
+    }
+    else {
     currentPlayer === 'cross';
-    playingnow.value = 'board__field--cross';
+    turn.value = 'board__field--cross';
     currentPlayer = 'circle';
+    changingPlayer.src = 'circle.svg';
     event.target.disabled = true
-  }
- 
-};
+  }};
 
 
-
-btn1.addEventListener('click', playing);
+btn1.addEventListener('click', playing,);
 btn2.addEventListener('click', playing);
 btn3.addEventListener('click', playing);
 btn4.addEventListener('click', playing);
