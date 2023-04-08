@@ -95,5 +95,17 @@ background-attachment: fixed;
   margin-left: 3rem;
   padding: 3rem;
   border-radius: 20%;
-  
+  background-image: image(.circle);
+}
+
+.board__field--cross {
+  background-image: url("cross.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.board__field--circle {
+  background-image: url("circle.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
 }

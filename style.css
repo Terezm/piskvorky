@@ -76,3 +76,8 @@ p {
 .rulesbutton:hover {
   background-color: #1cbb96
 }
+
+
+.buttons {
+  align-items: center;
+}
