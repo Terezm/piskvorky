@@ -14,14 +14,18 @@ const btn10 = document.querySelector('button:nth-child(10)');
 
 const playing = (event) => {
   const playingnow = event.target.classList
-  if (currentPlayer === 'circle') {
+   
+   if (currentPlayer === 'circle') {
     playingnow.value = 'board__field--circle';
     currentPlayer = 'cross';
+    event.target.disabled = true
   }else {
     currentPlayer === 'cross';
     playingnow.value = 'board__field--cross';
     currentPlayer = 'circle';
+    event.target.disabled = true
   }
+ 
 };
 
 
@@ -36,15 +40,3 @@ btn7.addEventListener('click', playing);
 btn8.addEventListener('click', playing);
 btn9.addEventListener('click', playing);
 btn10.addEventListener('click', playing);
-/*
-const  = (event) => {
-  const move = event.target.classList;
-  if (currentPlayer === 'circle') {
-    move.value = 'board__field--circle';
-    currentPlayer = 'cross';
-  } else {
-    currentPlayer === 'cross';
-    move.value = 'board__field--cross';
-    currentPlayer = 'circle';
-  }
-};*/
