@@ -49,3 +49,10 @@ btn7.addEventListener('click', playing);
 btn8.addEventListener('click', playing);
 btn9.addEventListener('click', playing);
 btn10.addEventListener('click', playing);
+
+
+const again = document.querySelector('.restartbutton')
+
+again.addEventListener('click', (event) => {
+    if (!confirm('Opravdu chceš začít znovu ?')) {
+        event.preventDefault()}})
