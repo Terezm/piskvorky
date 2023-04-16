@@ -35,6 +35,31 @@ btns.forEach((button) => {
   });
 });
 
+const playingfield = Array.from(btns);
+const findIt = playingfield.map((button) => {
+  if (button.classList.contains("board__field--circle")) {
+    return "o";
+  } else if (button.classList.contains("board__field--cross")) {
+    return "x";
+  } else {
+    return "_";
+  }
+});
+
+const winner = findWinner(findIt);
+console.log(winner);
+if (winner === "o" || winner === "x") {
+  setTimeout(() => {
+    alert(`Vyhrál hráč se symbolem ${winner}`);
+    location.reload();
+  }, 150);
+} else if (winner === "tie") {
+  setTimeout(() => {
+    alert("Tahle hra je nerozhodně!");
+    location.reload();
+  }, 150);
+}
+
 //přidání confirm
 const again = document.querySelector(".restartbutton");
 again.addEventListener("click", (event) => {
@@ -42,3 +67,9 @@ again.addEventListener("click", (event) => {
     event.preventDefault();
   }
 });
+
+/*
+const vitez = findWinner(herniPole);
+if (vitez === "o" || vitez === "x") {
+  alert(`Vyhrál hráč se symbolem ${vitez}.`); // Vyhrál hráč se symbolem o.
+}*/
