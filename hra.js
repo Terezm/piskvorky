@@ -2,23 +2,12 @@ import { findWinner } from "https://unpkg.com/piskvorky@0.1.4";
 
 let currentPlayer = "circle";
 
-const btn1 = document.querySelector("button:nth-child(1)");
-const btn2 = document.querySelector("button:nth-child(2)");
-const btn3 = document.querySelector("button:nth-child(3)");
-const btn4 = document.querySelector("button:nth-child(4)");
-const btn5 = document.querySelector("button:nth-child(5)");
-const btn6 = document.querySelector("button:nth-child(6)");
-const btn7 = document.querySelector("button:nth-child(7)");
-const btn8 = document.querySelector("button:nth-child(8)");
-const btn9 = document.querySelector("button:nth-child(9)");
-const btn10 = document.querySelector("button:nth-child(10)");
-
 const changingPlayer = document.querySelector("img");
-
 if (currentPlayer === "circle") {
   changingPlayer.src = "circle.svg";
 }
 
+//nastavení hráče
 const playing = (event) => {
   const turn = event.target.classList;
 
@@ -36,17 +25,17 @@ const playing = (event) => {
   }
 };
 
-btn1.addEventListener("click", playing);
-btn2.addEventListener("click", playing);
-btn3.addEventListener("click", playing);
-btn4.addEventListener("click", playing);
-btn5.addEventListener("click", playing);
-btn6.addEventListener("click", playing);
-btn7.addEventListener("click", playing);
-btn8.addEventListener("click", playing);
-btn9.addEventListener("click", playing);
-btn10.addEventListener("click", playing);
+//vybrání všech políček
+const vstup = document.querySelector(".field");
+const btns = document.querySelectorAll("button");
 
+btns.forEach((button) => {
+  button.addEventListener("click", playing, () => {
+    vstup.value += button.textContent;
+  });
+});
+
+//přidání confirm
 const again = document.querySelector(".restartbutton");
 again.addEventListener("click", (event) => {
   if (!confirm("Opravdu chceš začít znovu ?")) {
