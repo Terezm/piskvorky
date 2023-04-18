@@ -6,7 +6,7 @@ const changingPlayer = document.querySelector("img");
 if (currentPlayer === "circle") {
   changingPlayer.src = "circle.svg";
 }
-
+const btns = document.querySelectorAll("button");
 //nastavení hráče
 const playing = (event) => {
   const turn = event.target.classList;
@@ -22,19 +22,18 @@ const playing = (event) => {
     currentPlayer = "circle";
     changingPlayer.src = "circle.svg";
     event.target.disabled = true;
-
-    //const btns = document.querySelectorAll("button");
-    const playingfield = Array.from(button);
-    const findIt = playingfield.map((button) => {
-      if (button.classList.contains("board__field--circle")) {
-        return "o";
-      } else if (button.classList.contains("board__field--cross")) {
-        return "x";
-      } else {
-        return "_";
-      }
-    });
   }
+
+  const playingfield = Array.from(btns);
+  const findIt = playingfield.map((button) => {
+    if (button.classList.contains("board__field--circle")) {
+      return "o";
+    } else if (button.classList.contains("board__field--cross")) {
+      return "x";
+    } else {
+      return "_";
+    }
+  });
 
   const winner = findWinner(findIt);
   console.log(winner);
@@ -53,7 +52,7 @@ const playing = (event) => {
 //vybrání všech políček
 
 const vstup = document.querySelector(".field");
-button.forEach((button) => {
+btns.forEach((button) => {
   button.addEventListener("click", playing);
 });
 
