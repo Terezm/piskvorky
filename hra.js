@@ -22,43 +22,44 @@ const playing = (event) => {
     currentPlayer = "circle";
     changingPlayer.src = "circle.svg";
     event.target.disabled = true;
+
+    return "_";
   }
 };
 
 //vybrání všech políček
-const vstup = document.querySelector(".field");
-const btns = document.querySelectorAll("button");
 
+const btns = document.querySelectorAll("button");
+const vstup = document.querySelector(".field");
 btns.forEach((button) => {
   button.addEventListener("click", playing, () => {
     vstup.value += button.textContent;
+    const winner = findWinner(findIt);
+    console.log(winner);
+    if (winner === "o" || winner === "x") {
+      setTimeout(() => {
+        alert(`Vyhrál hráč se symbolem ${winner}`);
+        location.reload();
+      }, 150);
+    } else if (winner === "tie") {
+      setTimeout(() => {
+        alert("Tahle hra je nerozhodně!");
+        location.reload();
+      }, 150);
+    }
+  });
+
+  const playingfield = Array.from(btns);
+
+  const findIt = playingfield.map((button) => {
+    if (button.classList.contains("board__field--circle")) {
+      return "o";
+    } else if (button.classList.contains("board__field--cross")) {
+      return "x";
+    } else {
+    }
   });
 });
-
-const playingfield = Array.from(btns);
-const findIt = playingfield.map((button) => {
-  if (button.classList.contains("board__field--circle")) {
-    return "o";
-  } else if (button.classList.contains("board__field--cross")) {
-    return "x";
-  } else {
-    return "_";
-  }
-});
-
-const winner = findWinner(findIt);
-console.log(winner);
-if (winner === "o" || winner === "x") {
-  setTimeout(() => {
-    alert(`Vyhrál hráč se symbolem ${winner}`);
-    location.reload();
-  }, 150);
-} else if (winner === "tie") {
-  setTimeout(() => {
-    alert("Tahle hra je nerozhodně!");
-    location.reload();
-  }, 150);
-}
 
 //přidání confirm
 const again = document.querySelector(".restartbutton");
