@@ -6,7 +6,9 @@ const changingPlayer = document.querySelector("img");
 if (currentPlayer === "circle") {
   changingPlayer.src = "circle.svg";
 }
+
 const btns = document.querySelectorAll("button");
+
 //nastavení hráče
 const playing = (event) => {
   const turn = event.target.classList;
@@ -16,13 +18,12 @@ const playing = (event) => {
     currentPlayer = "cross";
     event.target.disabled = true;
     changingPlayer.src = "cross.svg";
-    return answer;
   } else {
-    currentPlayer === "cross";
-    turn.value = "board__field--cross";
     currentPlayer = "circle";
+    turn.value = "board__field--cross";
     changingPlayer.src = "circle.svg";
     event.target.disabled = true;
+    answer();
   }
 
   const playingField = Array.from(btns);
@@ -59,13 +60,24 @@ const answer = () => {
     button.disabled = true;
   });
 
+  const playingField = Array.from(btns);
+  const findIt = playingField.map((button) => {
+    if (button.classList.contains("board__field--circle")) {
+      return "o";
+    } else if (button.classList.contains("board__field--cross")) {
+      return "x";
+    } else {
+      return "_";
+    }
+  });
+
   fetch("https://piskvorky.czechitas-podklady.cz/api/suggest-next-move", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
     },
     body: JSON.stringify({
-      board: findIt(),
+      board: findIt,
       player: "x",
     }),
   })
@@ -100,9 +112,3 @@ again.addEventListener("click", (event) => {
     event.preventDefault();
   }
 });
-
-/*
-const vitez = findWinner(herniPole);
-if (vitez === "o" || vitez === "x") {
-  alert(`Vyhrál hráč se symbolem ${vitez}.`); // Vyhrál hráč se symbolem o.
-}*/
