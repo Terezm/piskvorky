@@ -55,7 +55,6 @@ const playing = (event) => {
 
 //přidání fetch
 const answer = () => {
-  currentPlayer = "cross";
   btns.forEach((button) => {
     button.disabled = true;
   });
