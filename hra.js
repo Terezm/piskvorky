@@ -18,12 +18,12 @@ const playing = (event) => {
     currentPlayer = "cross";
     event.target.disabled = true;
     changingPlayer.src = "cross.svg";
+    answer();
   } else {
     currentPlayer = "circle";
     turn.value = "board__field--cross";
     changingPlayer.src = "circle.svg";
     event.target.disabled = true;
-    answer();
   }
 
   const playingField = Array.from(btns);

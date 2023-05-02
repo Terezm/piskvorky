@@ -1,12 +1,12 @@
 * {
 box-sizing: border-box
-
-
-  }
+min-height: 80vmin
+}
 
 body {
 background: linear-gradient(#615dad, #ffc8da);
 background-attachment: fixed;  
+
 
 
 .nadpis {
@@ -43,6 +43,7 @@ background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  size: 20px;
   }
 
  .plate {
