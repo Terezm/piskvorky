@@ -16,6 +16,7 @@ const playing = (event) => {
     currentPlayer = "cross";
     event.target.disabled = true;
     changingPlayer.src = "cross.svg";
+    return answer;
   } else {
     currentPlayer === "cross";
     turn.value = "board__field--cross";
@@ -24,8 +25,8 @@ const playing = (event) => {
     event.target.disabled = true;
   }
 
-  const playingfield = Array.from(btns);
-  const findIt = playingfield.map((button) => {
+  const playingField = Array.from(btns);
+  const findIt = playingField.map((button) => {
     if (button.classList.contains("board__field--circle")) {
       return "o";
     } else if (button.classList.contains("board__field--cross")) {
@@ -39,7 +40,7 @@ const playing = (event) => {
   console.log(winner);
   if (winner === "o" || winner === "x") {
     setTimeout(() => {
-      alert(`Vyhrál hráč se symbolem ${winner}`);
+      alert(`Vyhrál hráč se symbolem ${winner} !`);
       location.reload();
     }, 150);
   } else if (winner === "tie") {
@@ -51,7 +52,43 @@ const playing = (event) => {
 };
 //vybrání všech políček
 
-const vstup = document.querySelector(".field");
+//přidání fetch
+const answer = () => {
+  currentPlayer = "cross";
+  btns.forEach((button) => {
+    button.disabled = true;
+  });
+
+  fetch("https://piskvorky.czechitas-podklady.cz/api/suggest-next-move", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      board: findIt(),
+      player: "x",
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const { x, y } = data.position;
+      const index = x + y * 10;
+      btns.forEach((button) => {
+        if (
+          button.classList.contains("board__field--cross") ||
+          button.classList.contains("board__field--circle")
+        ) {
+          button.disabled = true;
+        } else {
+          button.disabled = false;
+        }
+      });
+
+      btns[index].click();
+    });
+};
+
+const field = document.querySelector(".field");
 btns.forEach((button) => {
   button.addEventListener("click", playing);
 });

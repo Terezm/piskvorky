@@ -1,5 +1,6 @@
 * {
-box-sizing: border-box;
+box-sizing: border-box
+
 
   }
 
@@ -7,7 +8,6 @@ body {
 background: linear-gradient(#615dad, #ffc8da);
 background-attachment: fixed;  
 
-}
 
 .nadpis {
     font-family: "Lobster";
@@ -26,14 +26,16 @@ background-attachment: fixed;
   display: flex;
   margin: 0.5rem;
  padding-left: 5rem;
+ 
+}
 }
   
  
  .opening {
   display: flex;
-  justify-content:right;
-  margin-left: 35%;
-  margin-right: 35%;
+  justify-content:center;
+  margin-left: 50%;
+  margin-right: 50%;
  }
 
 
